@@ -1,0 +1,38 @@
+{% block inicio %}
+{% include "medicamentos/M-cabecera.html" %}
+
+        <div class="container">
+            <a class="btn btn-primary btn-lg btn-block mb-4" href="/medicamentos/crear_medicamento" role="button">Agregar Medicamento</a>
+            <table class="table table-hover table-striped table-bordered bg-light">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Principio Activo</th>
+                        <th>Presentacion</th>
+                        <th>Precio</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for medicamento in medicamentos %}
+                    <tr>
+                        <td>{{medicamento.id}}</td>
+                        <td>{{medicamento.nombre}}</td>
+                        <td>{{medicamento.principio_activo}}</td>
+                        <td>{{medicamento.presentacion}}</td>
+                        <td>${{medicamento.precio}}</td>
+                        <td>
+                            <a class="btn btn-warning btn-sm" href="/medicamentos/editar_medicamento/{{medicamento.id}}" role="button">Editar</a>
+                            <a class="btn btn-danger btn-sm" href="/medicamentos/borrar_medicamento/{{medicamento.id}}" role="button">Borrar</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+    
+
+{% include "pie.html" %}
+{% endblock %}

@@ -1,0 +1,36 @@
+{% block inicio %}
+{% include "farmacias/F-cabecera.html" %}
+
+        <div class="container">
+            <a class="btn btn-primary btn-lg btn-block mb-4" href="/farmacias/crear_farmacia" role="button">Agregar Farmacia</a>
+            <table class="table table-hover table-striped table-bordered bg-light">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Direccion</th>
+                        <th>Telefono</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for farmacia in farmacias %}
+                    <tr>
+                        <td>{{farmacia.id}}</td>
+                        <td>{{farmacia.nombre}}</td>
+                        <td>{{farmacia.direccion}}</td>
+                        <td>{{farmacia.telefono}}</td>
+                        <td>
+                            <a class="btn btn-warning btn-sm" href="/farmacias/editar_farmacia/{{farmacia.id}}" role="button">Editar</a>
+                            <a class="btn btn-danger btn-sm" href="/farmacias/borrar_farmacia/{{farmacia.id}}" role="button">Borrar</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+    
+
+{% include "pie.html" %}
+{% endblock %}

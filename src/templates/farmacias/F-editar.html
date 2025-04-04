@@ -1,0 +1,33 @@
+{% block editar %}
+{% include "farmacias/F-cabecera.html" %}
+<div class="d-flex justify-content-center align-items-center">
+    <div class="card shadow" style="width: 30rem;">
+        <div class="card-header bg-primary text-white">
+            Editar Farmacia
+        </div>
+        <div class="card-body">
+            <form method="post" action="/farmacias/actualizar_farmacia">
+                <div class="form-group">
+                    <label>ID</label>
+                    <input type="text" class="form-control" name="id" value="{{farmacia.id}}" readonly>
+                </div>
+                <div class="form-group">
+                    <label>Nombre</label>
+                    <input type="text" class="form-control" name="nombre" value="{{farmacia.nombre}}">
+                </div>
+                <div class="form-group">
+                    <label>Direccion</label>
+                    <input type="text" class="form-control" name="direccion" value="{{farmacia.direccion}}">
+                </div>
+                <div class="form-group">
+                    <label>Telefono</label>
+                    <input type="text" class="form-control" name="telefono" value="{{farmacia.telefono}}">
+                </div>
+                <button type="submit" class="btn btn-success btn-block">Confirmar</button>
+                <a class="btn btn-danger btn-block" href="/farmacias" role="button">Cancelar</a>
+            </form>
+        </div>
+    </div>
+</div>
+{% include "pie.html" %}
+{% endblock %}

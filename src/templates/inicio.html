@@ -1,0 +1,29 @@
+{% block inicio %}
+{% include "cabecera.html" %}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+
+        <div class="col-md-4">
+            <div class="card">
+                <img src="static\imagenes\pexels-karolina-grabowska-4046996.jpg" class="card-img-top" alt="Farmacia">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Gestión de Farmacias</h5>
+                    <a href="/farmacias" class="btn btn-primary">Ver Farmacias</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card">
+                <img src="static\imagenes\pexels-shkrabaanthony-5214954.jpg" class="card-img-top" alt="Medicamentos">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Gestión de Medicamentos</h5>
+                    <a href="/medicamentos" class="btn btn-success">Ver Medicamentos</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% include "pie.html" %}
+{% endblock %}

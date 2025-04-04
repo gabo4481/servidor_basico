@@ -1,0 +1,36 @@
+{% block version %}
+{% include "cabecera.html" %}
+
+<div class="d-flex justify-content-center align-items-center">
+    <div class="card shadow" style="width: 25rem;">
+        <div class="card-header bg-primary text-white">
+            Informacion
+        </div>
+        <div class="card-body">
+                <div class="form-group">
+                    <label>Creador</label>
+                    <input type="text" class="form-control" value="Gabriel Alejandro Mendoza Leon" readonly>
+                </div>
+                <div class="form-group">
+                    <label>Version</label>
+                    <input type="text" class="form-control" value="1.0.0" readonly>
+                </div>
+                <div class="form-group">
+                    <label>Front-End</label>
+                    <input type="text" class="form-control" value="html-css-bootstrap" readonly>
+                </div>
+                <div class="form-group">
+                    <label>Back-End</label>
+                    <input type="text" class="form-control" value="RUST-POSTGRESQL" readonly>
+                </div>
+                <div class="form-group">
+                    <label>Framework</label>
+                    <input type="text" class="form-control" value="Tokio, Actix-Web" readonly>
+                </div>
+                <a class="btn btn-danger btn-block" href="/" role="button">Salir</a>
+        </div>
+    </div>
+</div>
+
+{% include "pie.html" %}
+{% endblock %}
